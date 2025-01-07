@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Giao diện chính</title>
+    <script>
+        // Kiểm tra trạng thái đăng nhập
+        const isLoggedIn = false; // Thay đổi giá trị này dựa trên trạng thái đăng nhập thực tế
+
+        // Chức năng này sẽ chạy khi tải trang
+        window.onload = function() {
+            if (!isLoggedIn) {
+                // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
+                window.location.href = 'login.html';
+            }
+        };
+    </script>
 </head>
 <body>
     <h1>Chào mừng đến với Giao diện chính!</h1>
