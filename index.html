@@ -1,11 +1,22 @@
+
+### **1. Tạo file `index.html`**
+Đây là trang mặc định kiểm tra nếu người dùng đã đăng nhập.
+
+#### **index.html**
+```html
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=login.html">
-    <title>Chuyển hướng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome</title>
 </head>
 <body>
-    <p>Đang chuyển hướng đến trang đăng nhập...</p>
+    <h1>Welcome to the Website</h1>
+    <script src="script.js"></script>
+    <script>
+        checkLogin();
+    </script>
 </body>
 </html>
