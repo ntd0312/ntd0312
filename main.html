@@ -1,24 +1,22 @@
+### **3. Tạo file `main.html`**
+Đây là trang chính mà người dùng được điều hướng sau khi đăng nhập thành công.
+
+#### **main.html**
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Main Page</title>
 </head>
 <body>
     <h1>Welcome to the Main Page</h1>
     <p>You are logged in.</p>
 
+    <script src="script.js"></script>
     <script>
-        function checkLogin() {
-            const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-            const loggedIn = cookies.find(cookie => cookie.startsWith('loggedIn='));
-
-            if (!loggedIn) {
-                window.location.href = "login.html";
-            }
-        }
-
         checkLogin();
     </script>
 </body>
