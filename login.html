@@ -1,9 +1,14 @@
-<!-- login.html -->
+### **2. Tạo file `login.html`**
+Đây là trang đăng nhập để người dùng nhập thông tin.
+
+#### **login.html**
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
 <body>
@@ -18,46 +23,6 @@
         <button type="submit">Login</button>
     </form>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username === 'test' && password === '1234') {
-                document.cookie = "loggedIn=true; path=/; max-age=86400";
-                window.location.href = "main.html";
-            } else {
-                alert('Invalid credentials!');
-            }
-        });
-    </script>
-</body>
-</html>
-
-<!-- main.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-</head>
-<body>
-    <h1>Welcome to the Main Page</h1>
-    <p>You are logged in.</p>
-
-    <script>
-        function checkLogin() {
-            const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-            const loggedIn = cookies.find(cookie => cookie.startsWith('loggedIn='));
-
-            if (!loggedIn) {
-                window.location.href = "login.html";
-            }
-        }
-
-        checkLogin();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
