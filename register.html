@@ -19,5 +19,15 @@
     </form>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            // Logic đăng ký sẽ được xử lý ở script.js
+            // Bạn có thể thêm logic để gửi thông tin đến server ở đây
+        });
+    </script>
 </body>
 </html>
