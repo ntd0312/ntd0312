@@ -17,6 +17,7 @@
         <br><br>
         <button type="submit">Login</button>
         <button type="button" id="forgotPasswordBtn">Quên mật khẩu</button>
+        <button type="button" id="registerBtn">Đăng ký</button>
     </form>
 
     <script src="script.js"></script>
@@ -24,6 +25,11 @@
         // Nút quên mật khẩu
         document.getElementById('forgotPasswordBtn').addEventListener('click', function() {
             alert('Liên hệ: 0966598616 để được hỗ trợ.');
+        });
+
+        // Nút đăng ký
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            window.location.href = "register.html";  // Chuyển hướng đến trang đăng ký
         });
     </script>
 </body>
