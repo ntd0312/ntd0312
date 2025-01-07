@@ -2,38 +2,26 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Đăng nhập</title>
+    <title>Giao diện chính</title>
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        window.onload = function() {
+            const isLoggedIn = getCookie('loggedIn');
+
+            if (isLoggedIn !== 'true') {
+                // Chuyển hướng nếu không có cookie đăng nhập
+                window.location.href = 'login.html';
+            }
+        };
+    </script>
 </head>
 <body>
-    <h1>Đăng nhập</h1>
-    <form onsubmit="return login();">
-        <label for="username">Người dùng:</label>
-        <input type="text" id="username" required><br>
-        <label for="password">Mật khẩu:</label>
-        <input type="password" id="password" required><br>
-        <input type="submit" value="Đăng nhập">
-    </form>
-
-    <script>
-        function setCookie(name, value, days) {
-            const expires = new Date(Date.now() + days * 864e5).toUTCString();
-            document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
-        }
-
-        function login() {
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('password').value;
-
-            if (user === 'ntd0312' && pass === 'Bolapro1') {
-                // Thiết lập cookie khi đăng nhập thành công
-                setCookie('loggedIn', 'true', 1); // Cookie sẽ hết hạn sau 1 ngày
-                window.location.href = 'main.html'; // Điều hướng đến giao diện chính
-                return false; // Ngăn chặn gửi biểu mẫu
-            } else {
-                alert('Thông tin đăng nhập không chính xác!');
-                return false; // Ngăn chặn gửi biểu mẫu
-            }
-        }
-    </script>
+    <h1>Chào mừng đến với Giao diện chính!</h1>
+    <p>Đây là nơi bạn sẽ thấy nội dung chính của trang.</p>
 </body>
 </html>
